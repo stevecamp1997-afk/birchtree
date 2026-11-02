@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birch Tree Bookstore & Foliage Plant Shop | Historic Downtown Leesburg, VA</title>
+    <meta name="description" content="Birch Tree Bookstore & Foliage Plant Shop - Your cozy independent bookstore and boutique houseplant shop co-located in historic downtown Leesburg, Virginia.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#f0f5f2',
+                            100: '#dbe8e1',
+                            600: '#2b5740',
+                            800: '#1b3b2b',
+                            900: '#12291e',
+                        },
+                        oak: {
+                            50: '#fdfbf7',
+                            100: '#f9f6f0',
+                            200: '#f2ede4',
+                            300: '#e5dcce',
+                        },
+                        amber: {
+                            500: '#d97706',
+                            600: '#b85d19',
+                            700: '#964810',
+                        },
+                        terracotta: {
+                            500: '#c8794b',
+                            600: '#a85b2e',
+                        },
+                        slatecustom: '#2c3531'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styling enhancements */
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #2c3531;
+            background-color: #f9f6f0;
+        }
+        
+        .font-serif-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Hide scrollbar for clean UI in horizontal sliders if needed */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Glassmorphism effects */
+        .glass-nav {
+            background: rgba(249, 246, 240, 0.92);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Toast Animation */
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .toast-animate {
+            animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-oak-100 flex flex-col min-h-screen text-slatecustom relative selection:bg-amber-600 selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-forest-900 text-oak-100 text-xs sm:text-sm py-2 px-4 border-b border-forest-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-amber-500"></i> Open Today: 10:00 AM – 7:00 PM</span>
+                <span class="hidden md:inline text-forest-600">|</span>
+                <span class="hidden md:flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-500"></i> 11 W Market St (Suite 1) / 9 W Market St, Leesburg, VA 20176</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="tel:5719180726" class="hover:text-amber-500 transition-colors flex items-center gap-1 font-semibold"><i data-lucide="phone" class="w-3.5 h-3.5"></i> (571) 918-0726</a>
+                <span class="text-forest-600">|</span>
+                <a href="mailto:hello@birchtreebookstore.com" class="hover:text-amber-500 transition-colors flex items-center gap-1"><i data-lucide="mail" class="w-3.5 h-3.5"></i> Email Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-oak-300 shadow-sm transition-all duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-lg bg-forest-800 flex items-center justify-center text-oak-100 shadow-md group-hover:bg-amber-600 transition-colors duration-300">
+                        <i data-lucide="sprout" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif-heading text-2xl font-bold tracking-tight text-forest-800 block leading-none">Birch Tree</span>
+                        <span class="text-[11px] uppercase tracking-wider text-amber-600 font-semibold mt-1 block">Bookstore & Foliage Plant Shop</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-7 font-medium text-sm">
+                    <a href="#hero" class="text-forest-800 hover:text-amber-600 transition-colors py-1">Home</a>
+                    <a href="#catalog" class="text-slatecustom hover:text-amber-600 transition-colors py-1">Books & Literature</a>
+                    <a href="#plant-shop" class="text-forest-800 font-semibold hover:text-amber-600 transition-colors py-1 flex items-center gap-1.5 bg-forest-50 px-3 py-1 rounded-full border border-forest-100">
+                        <i data-lucide="leaf" class="w-4 h-4 text-forest-600"></i> Foliage Plant Shop
+                    </a>
+                    <a href="#events" class="text-slatecustom hover:text-amber-600 transition-colors py-1">Events & Workshops</a>
+                    <a href="#about" class="text-slatecustom hover:text-amber-600 transition-colors py-1">Our Story</a>
+                    <a href="#contact" class="text-slatecustom hover:text-amber-600 transition-colors py-1">Visit Us</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <!-- Quick Search Input (Desktop) -->
+                    <div class="relative hidden sm:block w-44 xl:w-56">
+                        <input type="text" id="header-search-input" placeholder="Search books or plants..." 
+                            class="w-full bg-oak-200 text-xs text-slatecustom rounded-full pl-9 pr-4 py-2 border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all">
+                        <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-3 top-2.5"></i>
+                    </div>
+
+                    <!-- Cart Drawer Trigger Button -->
+                    <button id="cart-btn" onclick="toggleCartDrawer(true)" class="relative p-2.5 rounded-full bg-forest-800 text-oak-100 hover:bg-amber-600 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-forest-800" aria-label="View Shopping Cart">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-amber-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-oak-100 hidden">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-forest-800 hover:bg-oak-200 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+                        <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden border-b border-oak-300 bg-oak-100 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <div class="pt-2 pb-3">
+                <input type="text" id="mobile-search-input" placeholder="Search catalog & plants..." 
+                    class="w-full bg-oak-200 text-sm text-slatecustom rounded-lg pl-9 pr-4 py-2.5 border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                <i data-lucide="search" class="w-4 h-4 text-gray-500 absolute left-7 top-6"></i>
+            </div>
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-base font-semibold text-forest-800 border-b border-oak-200">Home</a>
+            <a href="#catalog" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slatecustom hover:text-amber-600 border-b border-oak-200">Books & Literature</a>
+            <a href="#plant-shop" onclick="toggleMobileMenu()" class="block py-2 text-base font-bold text-forest-800 hover:text-amber-600 border-b border-oak-200 flex items-center justify-between">
+                <span>Foliage Plant Shop</span>
+                <span class="bg-forest-800 text-white text-xs px-2 py-0.5 rounded-full">New</span>
+            </a>
+            <a href="#events" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slatecustom hover:text-amber-600 border-b border-oak-200">Events & Workshops</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slatecustom hover:text-amber-600 border-b border-oak-200">Our Story</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium text-slatecustom hover:text-amber-600">Store Info & Location</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative bg-forest-900 text-oak-100 overflow-hidden py-16 lg:py-24">
+            <!-- Background Image Overlay with Warm Atmosphere -->
+            <div class="absolute inset-0 z-0 opacity-25 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1463320726281-696a485928c7?q=80&w=1600&auto=format&fit=crop');"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-forest-900 via-forest-900/95 to-transparent z-0"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest-800/80 border border-forest-600 text-amber-500 text-xs font-semibold uppercase tracking-wider">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Historic Downtown Leesburg, VA
+                        </div>
+                        
+                        <h1 class="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-oak-50">
+                            Where Good Books Meet <span class="italic text-amber-500 font-normal">Botanical Beauty</span>
+                        </h1>
+                        
+                        <p class="text-oak-200 text-base sm:text-lg max-w-2xl leading-relaxed">
+                            Welcome to <strong>Birch Tree Bookstore & Foliage Plant Shop</strong>. Co-located in the heart of historic downtown Leesburg, Virginia, we offer curated literature, lush indoor houseplants, artisan pottery, book clubs, and hands-on plant workshops.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+                            <a href="#catalog" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors shadow-lg shadow-amber-600/30 gap-2">
+                                <i data-lucide="book" class="w-5 h-5"></i> Browse Books
+                            </a>
+                            <a href="#plant-shop" class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-oak-100 font-semibold border border-forest-600 transition-colors gap-2">
+                                <i data-lucide="leaf" class="w-5 h-5 text-amber-500"></i> Explore Foliage Plant Shop
+                            </a>
+                        </div>
+
+                        <!-- Location & Quick Call Info Banner -->
+                        <div class="pt-6 border-t border-forest-800 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-oak-300">
+                            <div class="flex items-center gap-2.5">
+                                <div class="p-2 bg-forest-800 rounded-lg text-amber-500"><i data-lucide="map" class="w-4 h-4"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-oak-100">Leesburg Store Location</span>
+                                    <span>11 W Market St (Suite 1) & 9 W Market St</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <div class="p-2 bg-forest-800 rounded-lg text-amber-500"><i data-lucide="phone-call" class="w-4 h-4"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-oak-100">Call Us Direct</span>
+                                    <a href="tel:5719180726" class="hover:text-amber-500 font-bold text-oak-100 text-sm">(571) 918-0726</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dual Showcase Hero Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="bg-oak-200/10 backdrop-blur-md p-6 rounded-2xl border border-forest-600/50 shadow-2xl max-w-sm w-full relative">
+                            <div class="absolute -top-3 -right-3 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                                Downtown Leesburg Pairing
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Monstera Deliciosa & Classic Novel" 
+                                 class="w-full h-72 object-cover rounded-lg shadow-md mb-4 border border-oak-300">
+                            
+                            <h3 class="font-serif-heading text-xl font-bold text-oak-50">Monstera Deliciosa + Book Bundle</h3>
+                            <p class="text-xs text-amber-500 font-medium mb-2">Foliage Shop & Bookshop Feature</p>
+                            <p class="text-xs text-oak-300 line-clamp-2 mb-4">Pair a healthy 6" tropical Monstera with our staff recommendation of the month for the perfect Leesburg gift.</p>
+                            
+                            <div class="flex items-center justify-between pt-2 border-t border-forest-800">
+                                <span class="font-serif-heading text-xl font-bold text-oak-100">$48.00</span>
+                                <button onclick="addToCart(101)" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-colors flex items-center gap-1.5">
+                                    <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i> Add Bundle
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- STORE HIGHLIGHTS / VALUE PROPOSITIONS -->
+        <section class="py-10 bg-oak-200 border-b border-oak-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-oak-100 border border-oak-300 shadow-sm">
+                        <div class="p-3 bg-forest-50 text-forest-800 rounded-lg shrink-0">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-forest-800">Curated Literature</h4>
+                            <p class="text-xs text-gray-600 mt-1">Fiction, non-fiction, Virginia local history, and young adult collections.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-oak-100 border border-oak-300 shadow-sm">
+                        <div class="p-3 bg-forest-50 text-forest-800 rounded-lg shrink-0">
+                            <i data-lucide="leaf" class="w-6 h-6 text-forest-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-forest-800">Foliage Plant Shop</h4>
+                            <p class="text-xs text-gray-600 mt-1">Healthy houseplants, tropical foliage, rare terrariums, and ceramic pottery.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-oak-100 border border-oak-300 shadow-sm">
+                        <div class="p-3 bg-forest-50 text-forest-800 rounded-lg shrink-0">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-forest-800">Historic Leesburg, VA</h4>
+                            <p class="text-xs text-gray-600 mt-1">Located at 11 W Market St (Suite 1) & 9 W Market St in downtown Leesburg.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4 p-4 rounded-xl bg-oak-100 border border-oak-300 shadow-sm">
+                        <div class="p-3 bg-forest-50 text-forest-800 rounded-lg shrink-0">
+                            <i data-lucide="sprout" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-forest-800">Plant & Book Workshops</h4>
+                            <p class="text-xs text-gray-600 mt-1">Repotting classes, terrarium building, local author signings, and book clubs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATALOG & FEATURED BOOKS SECTION -->
+        <section id="catalog" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                <div>
+                    <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest block">Bookstore Shelves</span>
+                    <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-forest-800 mt-1">Curated Books & Literature</h2>
+                </div>
+                
+                <!-- Category Filter Tabs -->
+                <div class="flex flex-wrap items-center gap-2" id="category-tabs">
+                    <button onclick="filterCatalog('All')" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-forest-800 text-white" data-category="All">All Books</button>
+                    <button onclick="filterCatalog('Fiction')" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-oak-200 text-slatecustom hover:bg-oak-300" data-category="Fiction">Fiction</button>
+                    <button onclick="filterCatalog('Non-Fiction')" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-oak-200 text-slatecustom hover:bg-oak-300" data-category="Non-Fiction">Non-Fiction</button>
+                    <button onclick="filterCatalog('Local Authors')" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-oak-200 text-slatecustom hover:bg-oak-300" data-category="Local Authors">Virginia & Local</button>
+                    <button onclick="filterCatalog('Children & YA')" class="cat-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-oak-200 text-slatecustom hover:bg-oak-300" data-category="Children & YA">Children & YA</button>
+                </div>
+            </div>
+
+            <!-- Books Grid Container -->
+            <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+
+            <!-- Empty State Notice (hidden by default) -->
+            <div id="no-results" class="hidden text-center py-16 bg-oak-200 rounded-2xl border border-dashed border-oak-300">
+                <i data-lucide="book-x" class="w-12 h-12 text-gray-400 mx-auto mb-3"></i>
+                <h3 class="font-serif-heading text-lg font-bold text-forest-800">No matching titles found</h3>
+                <p class="text-xs text-gray-600 mt-1">Try adjusting your search query or selected category filter.</p>
+                <button onclick="filterCatalog('All')" class="mt-4 px-4 py-2 rounded-lg bg-forest-800 text-white text-xs font-semibold">Reset Catalog</button>
+            </div>
+        </section>
+
+        <!-- DEDICATED FOLIAGE PLANT SHOP SECTION -->
+        <section id="plant-shop" class="py-16 sm:py-24 bg-forest-900 text-oak-100 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-12 gap-6">
+                    <div class="max-w-2xl space-y-3">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest-800 text-amber-500 text-xs font-semibold uppercase tracking-wider border border-forest-600">
+                            <i data-lucide="sprout" class="w-3.5 h-3.5"></i> Co-located at 9 W Market St, Leesburg
+                        </div>
+                        <h2 class="font-serif-heading text-3xl sm:text-5xl font-bold text-oak-50">Foliage Plant Shop</h2>
+                        <p class="text-oak-200 text-sm leading-relaxed">
+                            Discover tropical houseplants, rare foliage, handcrafted pottery, organic soil mixes, and botanically inspired gifts right inside our Leesburg space.
+                        </p>
+                    </div>
+
+                    <!-- Plant Category Filters -->
+                    <div class="flex flex-wrap items-center gap-2" id="plant-tabs">
+                        <button onclick="filterPlants('All')" class="plant-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-amber-600 text-white" data-plant-cat="All">All Plants & Gear</button>
+                        <button onclick="filterPlants('Indoor Foliage')" class="plant-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-forest-800 text-oak-200 hover:bg-forest-700" data-plant-cat="Indoor Foliage">Indoor Foliage</button>
+                        <button onclick="filterPlants('Succulents & Cacti')" class="plant-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-forest-800 text-oak-200 hover:bg-forest-700" data-plant-cat="Succulents & Cacti">Succulents & Cacti</button>
+                        <button onclick="filterPlants('Pots & Care')" class="plant-tab px-4 py-2 rounded-full text-xs font-semibold transition-colors bg-forest-800 text-oak-200 hover:bg-forest-700" data-plant-cat="Pots & Care">Pots & Care</button>
+                    </div>
+                </div>
+
+                <!-- Plants Grid Container -->
+                <div id="plants-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Dynamically populated via JavaScript -->
+                </div>
+
+                <!-- Plant Care Consultation Banner -->
+                <div class="mt-16 bg-forest-800/90 border border-forest-600 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-lg">
+                            <i data-lucide="flower2" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif-heading text-xl font-bold text-oak-50">Free Plant Care Advice & In-Store Repotting</h3>
+                            <p class="text-xs text-oak-200 mt-1 max-w-xl">Bring your plant questions or pots into our 9 W Market St shop. Our local Leesburg botanists are always ready to help your indoor jungle thrive.</p>
+                        </div>
+                    </div>
+                    <a href="tel:5719180726" class="px-5 py-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs transition-colors whitespace-nowrap shadow-md flex items-center gap-2">
+                        <i data-lucide="phone" class="w-4 h-4"></i> Call Foliage Shop (571) 918-0726
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BOOK CLUB & UPCOMING EVENTS SECTION -->
+        <section id="events" class="py-16 sm:py-24 bg-oak-200 border-y border-oak-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    
+                    <!-- Left Side: Events Intro -->
+                    <div class="lg:col-span-4 space-y-4">
+                        <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest block">Gather & Learn in Leesburg</span>
+                        <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-forest-800">Literary Events & Plant Workshops</h2>
+                        <p class="text-sm text-gray-700 leading-relaxed">
+                            Join us in downtown Leesburg for monthly book discussions, local author signings, houseplant care workshops, and terrarium building sessions.
+                        </p>
+
+                        <div class="p-6 bg-forest-800 text-oak-100 rounded-xl space-y-3 mt-6 shadow-md">
+                            <div class="flex items-center gap-2 text-amber-500 font-semibold text-sm">
+                                <i data-lucide="heart" class="w-4 h-4"></i> Birch Tree Community Pass
+                            </div>
+                            <h3 class="font-serif-heading text-lg font-bold">Join Book & Plant Club</h3>
+                            <p class="text-xs text-oak-200 leading-relaxed">Get 15% off monthly book picks & plant care items, plus priority registration for hands-on workshops in Leesburg.</p>
+                            <button onclick="openRsvpModal('Monthly Birch Tree Club Membership', 'Every 1st Thursday in Leesburg')" class="w-full py-2.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-colors mt-2">
+                                Register as Member
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Events List -->
+                    <div class="lg:col-span-8 space-y-4">
+                        <h3 class="font-serif-heading text-xl font-bold text-forest-800 mb-6 flex items-center gap-2">
+                            <i data-lucide="calendar-days" class="w-5 h-5 text-amber-600"></i> Upcoming Leesburg Schedule
+                        </h3>
+
+                        <!-- Event Item 1 (Plant Workshop) -->
+                        <div class="bg-oak-100 p-6 rounded-xl border border-oak-300 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-amber-600 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-forest-800 text-oak-100 rounded-lg p-3 text-center min-w-[70px]">
+                                    <span class="block text-xs uppercase tracking-wider text-amber-500 font-bold">NOV</span>
+                                    <span class="block font-serif-heading text-2xl font-bold leading-none mt-1">16</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-0.5 rounded bg-forest-50 text-forest-800 text-[10px] font-bold uppercase">Foliage Workshop</span>
+                                        <span class="text-xs text-gray-500 flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 6:00 PM - 7:30 PM</span>
+                                    </div>
+                                    <h4 class="font-serif-heading text-lg font-bold text-forest-800">Indoor Houseplant Care 101 & Soil Mixology</h4>
+                                    <p class="text-xs text-gray-600 line-clamp-1">Learn tropical plant repotting, pest control, and custom soil blending at 9 W Market St.</p>
+                                </div>
+                            </div>
+                            <button onclick="openRsvpModal('Houseplant Care 101 Workshop', 'Nov 16, 6:00 PM')" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-forest-800 hover:bg-amber-600 text-white text-xs font-semibold transition-colors whitespace-nowrap">
+                                Reserve Spot ($20)
+                            </button>
+                        </div>
+
+                        <!-- Event Item 2 (Author Signing) -->
+                        <div class="bg-oak-100 p-6 rounded-xl border border-oak-300 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-amber-600 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-forest-800 text-oak-100 rounded-lg p-3 text-center min-w-[70px]">
+                                    <span class="block text-xs uppercase tracking-wider text-amber-500 font-bold">NOV</span>
+                                    <span class="block font-serif-heading text-2xl font-bold leading-none mt-1">23</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-700 text-[10px] font-bold uppercase">Author Signing</span>
+                                        <span class="text-xs text-gray-500 flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 6:30 PM - 8:00 PM</span>
+                                    </div>
+                                    <h4 class="font-serif-heading text-lg font-bold text-forest-800">Evening with Virginia Author: Loudoun History & Tales</h4>
+                                    <p class="text-xs text-gray-600 line-clamp-1">Reading, Q&A session, and exclusive book signing at 11 W Market St.</p>
+                                </div>
+                            </div>
+                            <button onclick="openRsvpModal('Virginia Local Author Event', 'Nov 23, 6:30 PM')" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-forest-800 hover:bg-amber-600 text-white text-xs font-semibold transition-colors whitespace-nowrap">
+                                Free Registration
+                            </button>
+                        </div>
+
+                        <!-- Event Item 3 (Terrarium DIY) -->
+                        <div class="bg-oak-100 p-6 rounded-xl border border-oak-300 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:border-amber-600 transition-colors">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-forest-800 text-oak-100 rounded-lg p-3 text-center min-w-[70px]">
+                                    <span class="block text-xs uppercase tracking-wider text-amber-500 font-bold">DEC</span>
+                                    <span class="block font-serif-heading text-2xl font-bold leading-none mt-1">07</span>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex items-center gap-2">
+                                        <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-bold uppercase">DIY Workshop</span>
+                                        <span class="text-xs text-gray-500 flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i> 11:00 AM - 1:00 PM</span>
+                                    </div>
+                                    <h4 class="font-serif-heading text-lg font-bold text-forest-800">Build Your Own Glass Terrarium Workshop</h4>
+                                    <p class="text-xs text-gray-600 line-clamp-1">Glassware, moss, miniature succulents, and decorative stones included in workshop fee.</p>
+                                </div>
+                            </div>
+                            <button onclick="openRsvpModal('Glass Terrarium Workshop', 'Dec 07, 11:00 AM')" class="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-forest-800 hover:bg-amber-600 text-white text-xs font-semibold transition-colors whitespace-nowrap">
+                                Reserve Class ($35)
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ABOUT BIRCH TREE BOOKSTORE & FOLIAGE PLANT SHOP -->
+        <section id="about" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-oak-100">
+                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop" 
+                             alt="Birch Tree Bookstore Interior Leesburg VA" 
+                             class="w-full h-[450px] object-cover">
+                    </div>
+                    <!-- Decorative overlay card -->
+                    <div class="hidden sm:block absolute -bottom-6 -right-6 z-20 bg-forest-800 text-oak-100 p-6 rounded-xl shadow-xl max-w-xs border border-forest-600">
+                        <p class="font-serif-heading italic text-sm text-oak-200">"A sanctuary in historic downtown Leesburg where stories and green leaves thrive together."</p>
+                        <span class="block text-xs font-bold text-amber-500 mt-2">— Downtown Leesburg, VA</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest block">Our Dual Concept</span>
+                    <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-forest-800 leading-tight">
+                        Books & Botanical Living Under One Roof
+                    </h2>
+                    
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Located along historic Market Street in Leesburg, Virginia (Suite 1 at 11 W Market St & 9 W Market St), <strong>Birch Tree Bookstore & Foliage Plant Shop</strong> brings together two of life’s greatest simple pleasures: captivating books and thriving greenery.
+                    </p>
+                    
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Whether you are browsing our curated fiction and local interest shelves at Suite 1 or picking up tropical foliage and ceramic pots at 9 W Market St, our store offers an inspiring space to slow down, connect, and discover.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 rounded-lg bg-oak-200 border border-oak-300">
+                            <span class="block font-serif-heading text-lg font-bold text-forest-800">11 W Market St (Suite 1)</span>
+                            <span class="text-xs text-gray-600">Bookstore, local authors & quiet reading space.</span>
+                        </div>
+                        <div class="p-4 rounded-lg bg-oak-200 border border-oak-300">
+                            <span class="block font-serif-heading text-lg font-bold text-forest-800">9 W Market St</span>
+                            <span class="text-xs text-gray-600">Foliage Plant Shop, potting bench & accessories.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS & REVIEWS -->
+        <section class="py-16 sm:py-20 bg-forest-900 text-oak-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-amber-500 font-semibold text-xs uppercase tracking-widest block">Leesburg Community Reviews</span>
+                    <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold mt-1 text-oak-50">Loved by Local Readers & Plant Enthusiasts</h2>
+                    <p class="text-xs text-oak-300 mt-2">Kind words from our neighbors in Loudoun County, Virginia.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="bg-forest-800/80 p-6 rounded-xl border border-forest-600 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex text-amber-500 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-oak-200 italic leading-relaxed">
+                                "My absolute favorite shop on Market Street! I came for a thriller novel and walked out with a gorgeous Monstera plant and care tips from their helpful staff."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-forest-600 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-amber-600 flex items-center justify-center font-bold text-xs text-white">
+                                SJ
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs text-oak-100">Sarah Jenkins</h4>
+                                <span class="text-[10px] text-oak-300">Leesburg Resident</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="bg-forest-800/80 p-6 rounded-xl border border-forest-600 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex text-amber-500 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-oak-200 italic leading-relaxed">
+                                "The plant repotting workshop was wonderful! The co-located store concept works so well. Birch Tree is a gem in downtown Leesburg."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-forest-600 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-forest-600 flex items-center justify-center font-bold text-xs text-white">
+                                DR
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs text-oak-100">David Reynolds</h4>
+                                <span class="text-[10px] text-oak-300">Loudoun County Patron</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="bg-forest-800/80 p-6 rounded-xl border border-forest-600 flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex text-amber-500 gap-1">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+                            </div>
+                            <p class="text-xs sm:text-sm text-oak-200 italic leading-relaxed">
+                                "Wonderful atmosphere, knowledgeable botanists, and a stellar book catalog. Calling ahead to check stock at (571) 918-0726 was smooth and easy."
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-forest-600 flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-amber-700 flex items-center justify-center font-bold text-xs text-white">
+                                EM
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-xs text-oak-100">Elena Martinez</h4>
+                                <span class="text-[10px] text-oak-300">Plant & Book Collector</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT & LOCATION SECTION WITH LEESBURG DETAILS -->
+        <section id="contact" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-amber-600 font-semibold text-xs uppercase tracking-widest block">Visit Downtown Leesburg</span>
+                <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-forest-800 mt-1">Location & Store Hours</h2>
+                <p class="text-xs text-gray-600 mt-2">Stop by our dual shop front on Market Street or get in touch with our team.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info & Hours Panel -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-forest-800 text-oak-100 p-8 rounded-2xl shadow-lg space-y-6">
+                        <h3 class="font-serif-heading text-xl font-bold border-b border-forest-600 pb-4">Store Information</h3>
+
+                        <div class="space-y-4 text-xs sm:text-sm">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-oak-100 font-semibold">Store Address</strong>
+                                    <span class="text-oak-300 block">11 W Market St (Suite 1) & 9 W Market St</span>
+                                    <span class="text-oak-300 block">Leesburg, VA 20176</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-oak-100 font-semibold">Phone Number</strong>
+                                    <a href="tel:5719180726" class="text-oak-100 font-bold hover:text-amber-500 transition-colors text-base">(571) 918-0726</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <strong class="block text-oak-100 font-semibold">Email</strong>
+                                    <a href="mailto:hello@birchtreebookstore.com" class="text-oak-300 hover:text-amber-500 transition-colors">hello@birchtreebookstore.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hours Timetable -->
+                        <div class="pt-4 border-t border-forest-600">
+                            <h4 class="font-serif-heading font-bold text-sm text-amber-500 mb-3 flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4"></i> Store Hours (Leesburg)
+                            </h4>
+                            <div class="space-y-2 text-xs text-oak-300">
+                                <div class="flex justify-between">
+                                    <span>Monday – Saturday:</span>
+                                    <span class="font-medium text-oak-100">10:00 AM – 7:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Sunday:</span>
+                                    <span class="font-medium text-oak-100">11:00 AM – 5:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed Container with Leesburg VA coordinates -->
+                    <div class="rounded-2xl overflow-hidden border border-oak-300 shadow-sm h-60 bg-oak-200">
+                        <iframe title="Birch Tree Bookstore Leesburg VA Map" 
+                                class="w-full h-full border-0" 
+                                loading="lazy" 
+                                allowfullscreen 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3096.88390776561!2d-77.56611382348508!3d39.11585803287315!2m3!1f0!2f0!3f0!2m3!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b615967732a39b%3A0x893d93bf8fa0ef14!2s11%20W%20Market%20St%2C%20Leesburg%2C%20VA%2020176!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form Panel -->
+                <div class="lg:col-span-7 bg-oak-100 p-8 rounded-2xl border border-oak-300 shadow-sm">
+                    <h3 class="font-serif-heading text-xl font-bold text-forest-800 mb-2">Send Us a Message</h3>
+                    <p class="text-xs text-gray-600 mb-6">Inquire about book availability, foliage plant availability, or custom plant orders.</p>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-name" class="block text-xs font-semibold text-gray-700 mb-1">Your Full Name *</label>
+                                <input type="text" id="contact-name" required placeholder="Jane Doe" 
+                                    class="w-full px-4 py-2.5 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-xs font-semibold text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="contact-email" required placeholder="jane@example.com" 
+                                    class="w-full px-4 py-2.5 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="contact-phone" class="block text-xs font-semibold text-gray-700 mb-1">Phone Number (Optional)</label>
+                                <input type="tel" id="contact-phone" placeholder="(571) 000-0000" 
+                                    class="w-full px-4 py-2.5 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all">
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-xs font-semibold text-gray-700 mb-1">Inquiry Topic</label>
+                                <select id="contact-subject" 
+                                    class="w-full px-4 py-2.5 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all">
+                                    <option value="General Question">General Inquiry</option>
+                                    <option value="Book Order">Book Inquiry / Special Order</option>
+                                    <option value="Plant Availability">Foliage Plant Stock / Repotting</option>
+                                    <option value="Workshop RSVP">Plant Care Workshop RSVP</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="contact-message" class="block text-xs font-semibold text-gray-700 mb-1">Your Message *</label>
+                            <textarea id="contact-message" rows="5" required placeholder="How can our Leesburg team assist you today?" 
+                                class="w-full px-4 py-2.5 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800 focus:bg-white transition-all resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-lg bg-forest-800 hover:bg-amber-600 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 shadow-md">
+                            <i data-lucide="send" class="w-4 h-4"></i> Send Message to Leesburg Store
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-forest-900 text-oak-100 border-t border-forest-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                
+                <!-- Brand Info Column -->
+                <div class="lg:col-span-2 space-y-4">
+                    <a href="#" class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-amber-600 flex items-center justify-center text-white">
+                            <i data-lucide="sprout" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-serif-heading text-2xl font-bold text-oak-50">Birch Tree</span>
+                    </a>
+                    <p class="text-xs text-oak-300 max-w-sm leading-relaxed">
+                        Bookstore & Foliage Plant Shop co-located at 11 W Market St (Suite 1) & 9 W Market St in historic downtown Leesburg, Virginia 20176.
+                    </p>
+                    <p class="text-xs font-semibold text-amber-500">
+                        Phone: <a href="tel:5719180726" class="hover:underline">(571) 918-0726</a>
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-forest-800 hover:bg-amber-600 text-oak-200 hover:text-white flex items-center justify-center transition-colors" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-forest-800 hover:bg-amber-600 text-oak-200 hover:text-white flex items-center justify-center transition-colors" aria-label="Facebook">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-forest-800 hover:bg-amber-600 text-oak-200 hover:text-white flex items-center justify-center transition-colors" aria-label="Twitter">
+                            <i data-lucide="twitter" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-serif-heading text-sm font-bold text-oak-50 mb-4">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-oak-300">
+                        <li><a href="#hero" class="hover:text-amber-500 transition-colors">Home</a></li>
+                        <li><a href="#catalog" class="hover:text-amber-500 transition-colors">Book Catalog</a></li>
+                        <li><a href="#plant-shop" class="hover:text-amber-500 transition-colors">Foliage Plant Shop</a></li>
+                        <li><a href="#events" class="hover:text-amber-500 transition-colors">Events & Workshops</a></li>
+                        <li><a href="#contact" class="hover:text-amber-500 transition-colors">Leesburg Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="font-serif-heading text-sm font-bold text-oak-50 mb-4">Shop Sections</h4>
+                    <ul class="space-y-2 text-xs text-oak-300">
+                        <li><a href="#catalog" onclick="filterCatalog('Fiction')" class="hover:text-amber-500 transition-colors">Literary Fiction</a></li>
+                        <li><a href="#catalog" onclick="filterCatalog('Local Authors')" class="hover:text-amber-500 transition-colors">Virginia Books</a></li>
+                        <li><a href="#plant-shop" onclick="filterPlants('Indoor Foliage')" class="hover:text-amber-500 transition-colors">Indoor Houseplants</a></li>
+                        <li><a href="#plant-shop" onclick="filterPlants('Pots & Care')" class="hover:text-amber-500 transition-colors">Pottery & Soil</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Subscription -->
+                <div class="space-y-3">
+                    <h4 class="font-serif-heading text-sm font-bold text-oak-50">Leesburg Community Newsletter</h4>
+                    <p class="text-xs text-oak-300">Subscribe for plant care tips, new book arrivals, and Leesburg event notices.</p>
+                    <form onsubmit="handleNewsletterSubmit(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter your email" 
+                            class="w-full px-3 py-2 rounded-lg bg-forest-800 text-xs text-oak-100 border border-forest-600 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                        <button type="submit" class="w-full py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="pt-8 border-t border-forest-800 text-center sm:flex sm:justify-between sm:items-center text-xs text-oak-300">
+                <p>&copy; 2026 Birch Tree Bookstore & Foliage Plant Shop. Leesburg, VA 20176.</p>
+                <div class="flex justify-center gap-4 mt-2 sm:mt-0">
+                    <a href="#" class="hover:text-amber-500 transition-colors">Privacy Policy</a>
+                    <span>&bull;</span>
+                    <a href="#" class="hover:text-amber-500 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART DRAWER (SLIDE OVER) -->
+    <div id="cart-drawer-overlay" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 transition-opacity opacity-0 pointer-events-none duration-300"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-oak-100 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        
+        <!-- Cart Drawer Header -->
+        <div class="p-6 bg-forest-800 text-oak-100 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-amber-500"></i>
+                <h3 class="font-serif-heading text-lg font-bold">Your Store Cart</h3>
+            </div>
+            <button onclick="toggleCartDrawer(false)" class="p-1 rounded-lg hover:bg-forest-700 text-oak-200 focus:outline-none" aria-label="Close Cart">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Cart Items List Container -->
+        <div id="cart-items-container" class="flex-grow p-6 overflow-y-auto space-y-4">
+            <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Cart Footer / Subtotal -->
+        <div class="p-6 bg-oak-200 border-t border-oak-300 space-y-4">
+            <div class="flex justify-between items-center text-sm">
+                <span class="text-gray-600 font-medium">Subtotal</span>
+                <span id="cart-subtotal" class="font-serif-heading text-xl font-bold text-forest-800">$0.00</span>
+            </div>
+            <p class="text-[11px] text-gray-500">Pickup in Leesburg or local shipping calculated at checkout.</p>
+            <button id="checkout-btn" onclick="openCheckoutModal()" class="w-full py-3 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs transition-colors shadow-md flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                Proceed to Checkout <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- RSVP MODAL FOR EVENTS -->
+    <div id="rsvp-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-oak-100 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-oak-300 relative space-y-4">
+            <button onclick="closeRsvpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div>
+                <span class="text-xs uppercase tracking-wider text-amber-600 font-semibold">Leesburg Event Registration</span>
+                <h3 id="modal-event-title" class="font-serif-heading text-xl font-bold text-forest-800 mt-0.5">Author Signing</h3>
+                <p id="modal-event-date" class="text-xs text-gray-500 mt-1 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> Date info</p>
+            </div>
+
+            <form onsubmit="handleRsvpSubmit(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name</label>
+                    <input type="text" required placeholder="Alex Smith" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address</label>
+                    <input type="email" required placeholder="alex@example.com" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Number of Attendees</label>
+                    <select class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full py-2.5 rounded-lg bg-forest-800 hover:bg-amber-600 text-white font-semibold text-xs transition-colors mt-2">
+                    Confirm Registration
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkout-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-oak-100 rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-oak-300 relative space-y-4 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            
+            <div>
+                <h3 class="font-serif-heading text-2xl font-bold text-forest-800">Complete Order</h3>
+                <p class="text-xs text-gray-500">Pick up at 11 W Market St / 9 W Market St, Leesburg or ship locally.</p>
+            </div>
+
+            <div class="p-4 rounded-lg bg-oak-200 text-xs space-y-2 border border-oak-300">
+                <div class="flex justify-between font-medium text-gray-700">
+                    <span>Order Subtotal:</span>
+                    <span id="checkout-modal-total" class="font-bold text-forest-800">$0.00</span>
+                </div>
+            </div>
+
+            <form onsubmit="handleCheckoutSubmit(event)" class="space-y-3">
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">First Name</label>
+                        <input type="text" required class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Last Name</label>
+                        <input type="text" required class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Email Address</label>
+                    <input type="email" required class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Fulfillment Option</label>
+                    <select class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                        <option value="pickup">In-Store Pickup (Leesburg Market St)</option>
+                        <option value="shipping">Local Virginia Shipping</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-700 mb-1">Shipping / Billing Address</label>
+                    <input type="text" required placeholder="Street address" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                </div>
+
+                <div class="grid grid-cols-3 gap-3">
+                    <div class="col-span-1">
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">City</label>
+                        <input type="text" required value="Leesburg" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">State</label>
+                        <input type="text" required value="VA" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Zip Code</label>
+                        <input type="text" required value="20176" class="w-full px-3 py-2 rounded-lg bg-oak-200 text-xs border border-oak-300 focus:outline-none focus:ring-2 focus:ring-forest-800">
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs transition-colors mt-4 shadow-lg">
+                    Place Order Now
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // BOOK DATABASE
+        const booksDatabase = [
+            {
+                id: 1,
+                title: "The Whispering Pines",
+                author: "Eleanor Vance",
+                price: 24.99,
+                category: "Fiction",
+                rating: 5.0,
+                cover: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=800&auto=format&fit=crop",
+                tag: "Staff Pick"
+            },
+            {
+                id: 2,
+                title: "Loudoun Valley Trails & History",
+                author: "Julian Thorne",
+                price: 28.50,
+                category: "Local Authors",
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop",
+                tag: "Virginia Pick"
+            },
+            {
+                id: 3,
+                title: "The Art of Coffee & Reading",
+                author: "Clara Hoffmann",
+                price: 19.99,
+                category: "Non-Fiction",
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=800&auto=format&fit=crop",
+                tag: "Bestseller"
+            },
+            {
+                id: 4,
+                title: "Chronicles of Starlight",
+                author: "Arthur Pendelton",
+                price: 16.99,
+                category: "Children & YA",
+                rating: 4.7,
+                cover: "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800&auto=format&fit=crop",
+                tag: "Young Adult"
+            },
+            {
+                id: 5,
+                title: "Shadows Over Shenandoah",
+                author: "Eleanor Vance",
+                price: 22.00,
+                category: "Fiction",
+                rating: 4.6,
+                cover: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800&auto=format&fit=crop",
+                tag: "New Release"
+            },
+            {
+                id: 6,
+                title: "Botany & Indoor Gardening",
+                author: "Maya Lin",
+                price: 32.00,
+                category: "Non-Fiction",
+                rating: 5.0,
+                cover: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=800&auto=format&fit=crop",
+                tag: "Illustrated"
+            },
+            {
+                id: 7,
+                title: "Historic Downtown Leesburg",
+                author: "Marcus Brody",
+                price: 21.50,
+                category: "Local Authors",
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1476275466078-4007374efbbe?q=80&w=800&auto=format&fit=crop",
+                tag: "Local History"
+            },
+            {
+                id: 8,
+                title: "The Secret Life of Trees",
+                author: "Sarah Jenkins",
+                price: 15.50,
+                category: "Children & YA",
+                rating: 4.8,
+                cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop",
+                tag: "Kids Favorite"
+            }
+        ];
+
+        // FOLIAGE PLANT SHOP DATABASE
+        const plantsDatabase = [
+            {
+                id: 101,
+                title: "Monstera Deliciosa (6\" Pot)",
+                category: "Indoor Foliage",
+                price: 28.00,
+                rating: 5.0,
+                cover: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800&auto=format&fit=crop",
+                tag: "Bestseller"
+            },
+            {
+                id: 102,
+                title: "Snake Plant Laurentii",
+                category: "Indoor Foliage",
+                price: 24.50,
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1593482892290-f54927ae1bf6?q=80&w=800&auto=format&fit=crop",
+                tag: "Low Light Favorite"
+            },
+            {
+                id: 103,
+                title: "Golden Pothos in Hanging Basket",
+                category: "Indoor Foliage",
+                price: 19.99,
+                rating: 4.8,
+                cover: "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=800&auto=format&fit=crop",
+                tag: "Easy Care"
+            },
+            {
+                id: 104,
+                title: "Echeveria & Succulent Trio",
+                category: "Succulents & Cacti",
+                price: 16.00,
+                rating: 4.7,
+                cover: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=800&auto=format&fit=crop",
+                tag: "Sun Lover"
+            },
+            {
+                id: 105,
+                title: "Handcrafted Terracotta Planter",
+                category: "Pots & Care",
+                price: 22.00,
+                rating: 5.0,
+                cover: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop",
+                tag: "Artisan Clay"
+            },
+            {
+                id: 106,
+                title: "Foliage Organic Houseplant Soil Mix",
+                category: "Pots & Care",
+                price: 12.99,
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?q=80&w=800&auto=format&fit=crop",
+                tag: "Custom Blend"
+            },
+            {
+                id: 107,
+                title: "Fiddle Leaf Fig (Tall)",
+                category: "Indoor Foliage",
+                price: 45.00,
+                rating: 4.8,
+                cover: "https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800&auto=format&fit=crop",
+                tag: "Statement Plant"
+            },
+            {
+                id: 108,
+                title: "Brass Watering Can & Plant Mister",
+                category: "Pots & Care",
+                price: 34.00,
+                rating: 4.9,
+                cover: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?q=80&w=800&auto=format&fit=crop",
+                tag: "Gift Set"
+            }
+        ];
+
+        // CART & FILTER STATES
+        let cart = [];
+        let currentBookCategory = 'All';
+        let currentPlantCategory = 'All';
+        let currentSearchQuery = '';
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCatalog();
+            renderPlants();
+            updateCartUI();
+            lucide.createIcons();
+
+            // Search inputs
+            document.getElementById('header-search-input').addEventListener('input', (e) => {
+                currentSearchQuery = e.target.value.toLowerCase();
+                renderCatalog();
+                renderPlants();
+            });
+            document.getElementById('mobile-search-input').addEventListener('input', (e) => {
+                currentSearchQuery = e.target.value.toLowerCase();
+                renderCatalog();
+                renderPlants();
+            });
+        });
+
+        // MOBILE MENU TOGGLE
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        // RENDER BOOK CATALOG GRID
+        function renderCatalog() {
+            const grid = document.getElementById('books-grid');
+            const noResults = document.getElementById('no-results');
+
+            const filteredBooks = booksDatabase.filter(book => {
+                const matchesCategory = (currentBookCategory === 'All') || (book.category === currentBookCategory);
+                const matchesSearch = book.title.toLowerCase().includes(currentSearchQuery) || 
+                                      book.author.toLowerCase().includes(currentSearchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredBooks.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = filteredBooks.map(book => `
+                <div class="bg-oak-100 rounded-xl border border-oak-300 overflow-hidden shadow-sm hover:shadow-md hover:border-amber-600 transition-all flex flex-col group">
+                    <div class="relative overflow-hidden h-64 bg-oak-200">
+                        <img src="${book.cover}" alt="${book.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-forest-800 text-oak-100 text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                            ${book.tag}
+                        </span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-amber-600 font-medium mb-1">
+                                <span>${book.category}</span>
+                                <span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 fill-amber-500"></i> ${book.rating}</span>
+                            </div>
+                            <h3 class="font-serif-heading text-lg font-bold text-forest-800 group-hover:text-amber-600 transition-colors line-clamp-1">${book.title}</h3>
+                            <p class="text-xs text-gray-600">By ${book.author}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-oak-200">
+                            <span class="font-serif-heading text-xl font-bold text-forest-800">$${book.price.toFixed(2)}</span>
+                            <button onclick="addToCart(${book.id}, 'book')" class="px-3.5 py-2 rounded-lg bg-forest-800 hover:bg-amber-600 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // RENDER FOLIAGE PLANT SHOP GRID
+        function renderPlants() {
+            const grid = document.getElementById('plants-grid');
+            if (!grid) return;
+
+            const filteredPlants = plantsDatabase.filter(plant => {
+                const matchesCategory = (currentPlantCategory === 'All') || (plant.category === currentPlantCategory);
+                const matchesSearch = plant.title.toLowerCase().includes(currentSearchQuery) || 
+                                      plant.category.toLowerCase().includes(currentSearchQuery);
+                return matchesCategory && matchesSearch;
+            });
+
+            if (filteredPlants.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-10 text-oak-300 text-xs">No matching plants or care items found.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filteredPlants.map(plant => `
+                <div class="bg-forest-800 rounded-xl border border-forest-600 overflow-hidden shadow-md hover:border-amber-500 transition-all flex flex-col group text-oak-100">
+                    <div class="relative overflow-hidden h-60 bg-forest-900">
+                        <img src="${plant.cover}" alt="${plant.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                            ${plant.tag}
+                        </span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow justify-between space-y-3">
+                        <div>
+                            <div class="flex items-center justify-between text-xs text-amber-500 font-medium mb-1">
+                                <span>${plant.category}</span>
+                                <span class="flex items-center gap-1 text-amber-400"><i data-lucide="star" class="w-3 h-3 fill-amber-400"></i> ${plant.rating}</span>
+                            </div>
+                            <h3 class="font-serif-heading text-lg font-bold text-oak-50 group-hover:text-amber-400 transition-colors line-clamp-1">${plant.title}</h3>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-forest-700">
+                            <span class="font-serif-heading text-xl font-bold text-oak-50">$${plant.price.toFixed(2)}</span>
+                            <button onclick="addToCart(${plant.id}, 'plant')" class="px-3.5 py-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="leaf" class="w-3.5 h-3.5"></i> Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        // FILTER CATALOG CATEGORY
+        function filterCatalog(category) {
+            currentBookCategory = category;
+            const tabs = document.querySelectorAll('.cat-tab');
+            tabs.forEach(tab => {
+                if (tab.dataset.category === category) {
+                    tab.classList.remove('bg-oak-200', 'text-slatecustom');
+                    tab.classList.add('bg-forest-800', 'text-white');
+                } else {
+                    tab.classList.remove('bg-forest-800', 'text-white');
+                    tab.classList.add('bg-oak-200', 'text-slatecustom');
+                }
+            });
+            renderCatalog();
+        }
+
+        // FILTER PLANT CATEGORY
+        function filterPlants(category) {
+            currentPlantCategory = category;
+            const tabs = document.querySelectorAll('.plant-tab');
+            tabs.forEach(tab => {
+                if (tab.dataset.plantCat === category) {
+                    tab.classList.remove('bg-forest-800', 'text-oak-200');
+                    tab.classList.add('bg-amber-600', 'text-white');
+                } else {
+                    tab.classList.remove('bg-amber-600', 'text-white');
+                    tab.classList.add('bg-forest-800', 'text-oak-200');
+                }
+            });
+            renderPlants();
+        }
+
+        // SHOPPING CART LOGIC FOR BOOKS & PLANTS
+        function addToCart(itemId, type = 'book') {
+            let itemObj = null;
+            if (type === 'plant') {
+                itemObj = plantsDatabase.find(p => p.id === itemId);
+            } else {
+                itemObj = booksDatabase.find(b => b.id === itemId);
+            }
+            
+            if (!itemObj) return;
+
+            const existingIndex = cart.findIndex(item => item.id === itemId);
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push({ ...itemObj, quantity: 1, itemType: type });
+            }
+
+            updateCartUI();
+            showToast(`Added "${itemObj.title}" to your cart.`);
+        }
+
+        function updateQuantity(itemId, delta) {
+            const index = cart.findIndex(item => item.id === itemId);
+            if (index > -1) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            updateCartUI();
+            showToast("Item removed from cart.");
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items-container');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const badgeEl = document.getElementById('cart-badge');
+            const checkoutBtn = document.getElementById('checkout-btn');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            if (totalItems > 0) {
+                badgeEl.innerText = totalItems;
+                badgeEl.classList.remove('hidden');
+            } else {
+                badgeEl.classList.add('hidden');
+            }
+
+            subtotalEl.innerText = `$${subtotal.toFixed(2)}`;
+            checkoutBtn.disabled = cart.length === 0;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gray-500 space-y-2">
+                        <i data-lucide="shopping-bag" class="w-12 h-12 mx-auto text-gray-300"></i>
+                        <p class="text-sm font-medium">Your store cart is empty.</p>
+                        <p class="text-xs text-gray-400">Add books or house plants to get started!</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-4 bg-white p-3 rounded-lg border border-oak-300 shadow-sm">
+                        <img src="${item.cover}" alt="${item.title}" class="w-14 h-16 object-cover rounded shrink-0">
+                        <div class="flex-grow min-w-0">
+                            <span class="text-[9px] uppercase font-bold text-amber-600 block">${item.itemType === 'plant' ? 'Foliage Plant' : 'Book'}</span>
+                            <h4 class="font-serif-heading font-bold text-xs text-forest-800 truncate">${item.title}</h4>
+                            <span class="text-[11px] text-gray-500 block">$${item.price.toFixed(2)} each</span>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQuantity(${item.id}, -1)" class="w-5 h-5 rounded bg-oak-200 text-gray-700 font-bold flex items-center justify-center text-xs hover:bg-oak-300">-</button>
+                                <span class="text-xs font-semibold px-1">${item.quantity}</span>
+                                <button onclick="updateQuantity(${item.id}, 1)" class="w-5 h-5 rounded bg-oak-200 text-gray-700 font-bold flex items-center justify-center text-xs hover:bg-oak-300">+</button>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${item.id})" class="text-gray-400 hover:text-red-500 p-1" aria-label="Remove item">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            lucide.createIcons();
+        }
+
+        // CART DRAWER TOGGLE
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cart-drawer');
+            const overlay = document.getElementById('cart-drawer-overlay');
+
+            if (open) {
+                overlay.classList.remove('opacity-0', 'pointer-events-none');
+                drawer.classList.remove('translate-x-full');
+            } else {
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                drawer.classList.add('translate-x-full');
+            }
+        }
+
+        // RSVP MODAL LOGIC
+        function openRsvpModal(eventTitle, eventDate) {
+            document.getElementById('modal-event-title').innerText = eventTitle;
+            document.getElementById('modal-event-date').innerHTML = `<i data-lucide="calendar" class="w-3.5 h-3.5"></i> ${eventDate}`;
+            document.getElementById('rsvp-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeRsvpModal() {
+            document.getElementById('rsvp-modal').classList.add('hidden');
+        }
+
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            closeRsvpModal();
+            showToast("Reservation Confirmed! We look forward to seeing you in Leesburg.");
+            e.target.reset();
+        }
+
+        // CHECKOUT MODAL LOGIC
+        function openCheckoutModal() {
+            if (cart.length === 0) return;
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            document.getElementById('checkout-modal-total').innerText = `$${subtotal.toFixed(2)}`;
+            toggleCartDrawer(false);
+            document.getElementById('checkout-modal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkout-modal').classList.add('hidden');
+        }
+
+        function handleCheckoutSubmit(e) {
+            e.preventDefault();
+            closeCheckoutModal();
+            cart = [];
+            updateCartUI();
+            showToast("Order placed successfully! Thank you for supporting Birch Tree Leesburg.");
+            e.target.reset();
+        }
+
+        // FORM SUBMISSIONS
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Message sent! Our Leesburg team will respond shortly.");
+            e.target.reset();
+        }
+
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast("Subscribed! Welcome to the Birch Tree Leesburg community.");
+            e.target.reset();
+        }
+
+        // TOAST SYSTEM
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'toast-animate bg-forest-800 text-oak-100 text-xs font-semibold px-4 py-3 rounded-lg shadow-xl border border-forest-600 flex items-center gap-2 pointer-events-auto';
+            toast.innerHTML = `<i data-lucide="check-circle" class="w-4 h-4 text-amber-500"></i> ${message}`;
+
+            container.appendChild(toast);
+            lucide.createIcons();
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
